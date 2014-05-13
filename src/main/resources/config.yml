@@ -1,0 +1,6 @@
+#BullyPVP 1v1
+1v1Length: 300            #Length 1v1 matches last in seconds.
+
+Request-Expire-Time: 60      #When a player sends a request how long until it has till it expires in seconds.
+
+PreventCombat: false  #Cancel 1v1 request if player is PVPing.
