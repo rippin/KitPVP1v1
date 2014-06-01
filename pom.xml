@@ -20,6 +20,13 @@
             <version>LATEST</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>LATEST</version>
+            <scope>provided</scope>
+        </dependency>
+
      <dependency>
         <groupId>me.bullyscaft.com</groupId>
         <artifactId>BullyPVP</artifactId>
@@ -38,7 +45,6 @@
                 <includes>
                     <include>plugin.yml</include>
                     <include>config.yml</include>
-                    <include>arena.yml</include>
                 </includes>
             </resource>
         </resources>

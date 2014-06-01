@@ -1,35 +1,34 @@
-package rippin.bullyscraft.com;
+package rippin.bullyscraft.com.Configs;
 
-
-import me.bullyscraft.com.BullyPVP;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import rippin.bullyscraft.com.KitPVP1v1;
+
 import java.io.*;
 
-public class Config {
+public class ArenaConfig {
 
-	private static BullyPVP plugin;
+	private static KitPVP1v1 plugin;
 	private static FileConfiguration config;
 	private static File configFile;
-	
 
-	@SuppressWarnings("static-access")
-	public Config(BullyPVP plugin){
-		this.plugin = plugin;
-		this.configFile = new File(plugin.getDataFolder(), "config.yml");
-		this.config = YamlConfiguration.loadConfiguration(configFile);
+
+	public static void setUp(KitPVP1v1 pluginInstance){
+		plugin = pluginInstance;
+		configFile = new File(plugin.getDataFolder(), "arenas.yml");
+		config = YamlConfiguration.loadConfiguration(configFile);
+        create();
 	}
 
 	public static void create(){
 		if (!(getFile().exists())){
-			plugin.getServer().getLogger().info("Config.yml not found. Creating now...");
+			plugin.getServer().getLogger().info("Arenas.yml not found. Creating now...");
 			try {
 				getFile().createNewFile();
-                copy(plugin.getResource("config.yml"), configFile);
                 reload(); //reload yml just in case
 
 				saveFile(getFile(), getConfig());
-				plugin.getServer().getLogger().info("Config.yml has been created!");	
+				plugin.getServer().getLogger().info("Arenas.yml has been created!");
 			} catch (IOException e) {
 				
 				e.printStackTrace();

@@ -6,9 +6,10 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-
+import rippin.bullyscraft.com.Configs.ArenaConfig;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ArenaManager {
  private static List<Arena> allArenas = new ArrayList<Arena>();
@@ -100,7 +101,7 @@ public class ArenaManager {
     }
     public static boolean isInArena(Player player) {
         for (Arena arena : getAllArenas()) {
-            if (arena.getPlayers().contains(player.getName())){
+            if (arena.getPlayersUUID().contains(player.getUniqueId())){
                 return true;
             }
         }
@@ -118,5 +119,14 @@ public class ArenaManager {
             }
         }
         return exists;
+    }
+
+    public static void broadcastToArena(Arena arena, String message){
+        List<String> players = arena.getPlayersUUID();
+        for (String uuid : players){
+            Player player = Bukkit.getServer().getPlayer(UUID.fromString(uuid));
+            player.sendMessage(message);
+
+        }
     }
 }

@@ -1,7 +1,16 @@
 package rippin.bullyscraft.com;
 
 
-public class ArenaState {
-public static final String vacant = "VACANT";
-public static final String occupied = "OCCUPIED";
+public enum ArenaState {
+VACANT ("VACANT"), OCCUPIED("OCCUPIED"), STARTING("STARTING");
+
+    private String state;
+
+    ArenaState(String state){
+        this.state = state;
+    }
+
+    public String getState(){
+        return state;
+    }
 }

@@ -11,13 +11,16 @@ public class Arena {
     private String type;
 
     private List<Location> spawns = new ArrayList<Location>();
-    private List<String> players = new ArrayList<String>();
+    private List<String> playersUUID = new ArrayList<String>();
 
     public Arena(String name){
     this.name = name;
-    state = ArenaState.vacant;
+    state = ArenaState.VACANT.getState();
     }
 
+    public void start(){
+    state = ArenaState.STARTING.getState();
+    }
     public void setSpawn(Location loc, int index){
         spawns.set(index, loc);
 
@@ -35,12 +38,12 @@ public class Arena {
         this.state = state;
     }
 
-    public List<String> getPlayers(){
-        return players;
+    public List<String> getPlayersUUID(){
+        return playersUUID;
     }
 
-    public void setPlayers(List<String> players){
-        this.players = players;
+    public void setPlayersUUID(List<String> players){
+        this.playersUUID = players;
     }
     public String getName(){
         return  name;
