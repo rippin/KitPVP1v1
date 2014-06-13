@@ -1,6 +1,7 @@
 #BullyPVP 1v1
-1v1Length: 300            #Length 1v1 matches last in seconds.
+1v1-Length: 300            #Length 1v1 matches last in seconds.
 1v1-Start-Delay: 10       #Start Delay.
+1v1-End-Delay: 10         #End Delay (How much time after fight ends to tp)
 
 Request-Expire-Time: 60      #When a player sends a request how long until it has till it expires in seconds.
 

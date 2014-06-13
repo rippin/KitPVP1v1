@@ -33,6 +33,7 @@ public class ArenaManager {
                         + " has been loaded from file!");
                 Arena a = new Arena(key);
                 allArenas.add(a);
+                parseSpawns(a);
                 return true;
             }
         } catch (NullPointerException e) {
@@ -46,21 +47,25 @@ public class ArenaManager {
         String name = arena.getName();
         for (String key : ArenaConfig.getConfig()
                 .getConfigurationSection("Arena." + name + ".Spawn").getKeys(false)) {
-        int i = 0;
-        World w = Bukkit.getWorld(ArenaConfig.getConfig().getString("Arena." + name + ".Spawn." + key + ".World"));
-        double x = ArenaConfig.getConfig().getDouble("Arena." + name + ".Spawn." + key + ".X");
-        double y = ArenaConfig.getConfig().getDouble("Arena." + name + ".Spawn." + key + ".Y");
-        double z = ArenaConfig.getConfig().getDouble("Arena." + name + ".Spawn." + key + ".Z");
-        float yaw = (float) ArenaConfig.getConfig().getDouble("Arena." + name + ".Spawn." + key + ".Yaw");
-        float pitch = (float) ArenaConfig.getConfig().getDouble("Arena." + name + ".Spawn." + key + ".Pitch");
+        int index = 0;
+        FileConfiguration config = ArenaConfig.getConfig();
+
+        World w = Bukkit.getWorld(config.getString("Arena." + name + ".Spawn." + index + ".World"));
+        double x = config.getDouble("Arena." + name + ".Spawn." + index + ".X");
+        double y = config.getDouble("Arena." + name + ".Spawn." + index + ".Y");
+        double z = config.getDouble("Arena." + name + ".Spawn." + index + ".Z");
+        float yaw = (float) config.getDouble("Arena." + name + ".Spawn." + index + ".Yaw");
+        float pitch = (float)config.getDouble("Arena." + name + ".Spawn." + index + ".Pitch");
 
         Location loc = new Location(w, x, y, z, yaw, pitch);
-            arena.setSpawn(loc, i);
-            i++;
+            arena.setSpawn(loc, index);
+            System.out.println("Set spawn " + index + " for arena " + name);
+            index++;
         }
     }
 
-    public static void setSpawn(String name, Location loc, int index){
+    public static void setSpawn(Arena arena, Location loc, int index){
+        String name = arena.getName();
         World w = loc.getWorld();
         double x = loc.getX();
         double y = loc.getY();
@@ -77,13 +82,9 @@ public class ArenaManager {
         config.set("Arena." + name + ".Spawn." + index + ".Yaw", yaw);
         config.set("Arena." + name + ".Spawn." + index + ".Pitch", pitch);
 
-        Arena a = ArenaManager.getArena(name);
-        a.setSpawn(loc, index);
+        arena.setSpawn(loc, index);
     }
 
-    public static void setPlayer(String name, String player){
-
-    }
     public static List<Arena> getAllArenas() {
         return allArenas;
     }
@@ -125,7 +126,7 @@ public class ArenaManager {
         List<String> players = arena.getPlayersUUID();
         for (String uuid : players){
             Player player = Bukkit.getServer().getPlayer(UUID.fromString(uuid));
-            player.sendMessage(message);
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 
         }
     }

@@ -2,7 +2,7 @@ package rippin.bullyscraft.com;
 
 
 public enum ArenaState {
-VACANT ("VACANT"), OCCUPIED("OCCUPIED"), STARTING("STARTING");
+VACANT ("VACANT"), OCCUPIED("OCCUPIED"), STARTING("STARTING"), ENDING("ENDING");
 
     private String state;
 
@@ -10,7 +10,7 @@ VACANT ("VACANT"), OCCUPIED("OCCUPIED"), STARTING("STARTING");
         this.state = state;
     }
 
-    public String getState(){
+    public String toString(){
         return state;
     }
 }

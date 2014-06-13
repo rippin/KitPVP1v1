@@ -4,6 +4,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitRunnable;
 import rippin.bullyscraft.com.Arena;
 import rippin.bullyscraft.com.ArenaManager;
+import rippin.bullyscraft.com.ArenaState;
+import rippin.bullyscraft.com.Configs.CachedData;
 import rippin.bullyscraft.com.KitPVP1v1;
 
 public class FightLengtCountdown {
@@ -11,6 +13,7 @@ public class FightLengtCountdown {
     private Arena arena;
     private int delay;
     private KitPVP1v1 plugin;
+    private int taskid;
 
     public FightLengtCountdown(Arena arena, int delay, KitPVP1v1 plugin){
         this.arena = arena;
@@ -19,7 +22,8 @@ public class FightLengtCountdown {
     }
 
     public void startCountdown(){
-        plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new BukkitRunnable() {
+      arena.setState(ArenaState.OCCUPIED);
+        taskid =  plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new BukkitRunnable() {
             @Override
             public void run() {
             if (delay == 300){
@@ -50,9 +54,15 @@ public class FightLengtCountdown {
             else if(delay == 0){
                 //time ran out
                 //run method
+                new FightEndCountdown(arena, CachedData.endDelay, plugin).startCountdown();
+                cancelTask(taskid);
             }
             --delay;
             }
         }, 20L, 20L);
+    }
+
+    public void cancelTask(int taskid){
+        plugin.getServer().getScheduler().cancelTask(taskid);
     }
 }

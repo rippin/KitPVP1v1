@@ -1,5 +1,6 @@
 package rippin.bullyscraft.com.Inventory;
 
+import me.bullyscraft.com.Classes.Wipe;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class InventoryManager {
+public class PlayerDataHandler {
 
     public static void savePlayerData(Player player){
         FileConfiguration config = PlayerDataConfig.getConfig();
@@ -34,22 +35,26 @@ public class InventoryManager {
        config.set(uuid + ".Location.Z", location.getZ());
        config.set(uuid + ".Location.Yaw", location.getYaw());
        config.set(uuid + ".Location.Pitch", location.getPitch());
-    }
 
+        PlayerDataConfig.saveFile();
+    }
+    // add method to clear and give kit and crap
     public static void returnItemsAndLocation(Player player){
-        //clear player stuff
+        Wipe.wipe(player); // Wipe player
         FileConfiguration config = PlayerDataConfig.getConfig();
         String uuid = player.getUniqueId().toString();
         Location loc = parseLoc(uuid);
         List<String> potions = config.getStringList(uuid + ".Potions");
         String stringInv = config.getString(uuid + ".Inventory");
         PlayerInventory oldInv = (PlayerInventory) ItemSerialization.fromBase64(stringInv);
-        PlayerInventory currentInv = player.getInventory();
         for (String string: potions){
             PotionEffect effect = PotionSerialization.fromStringToPotionEffect(string);
             player.addPotionEffect(effect);
         }
-        currentInv = oldInv;
+        player.getInventory().setContents(oldInv.getContents());
+        player.getInventory().setArmorContents(oldInv.getArmorContents());
+        player.teleport(loc);
+        config.set(uuid, null); // To delete saved data
 
     }
 

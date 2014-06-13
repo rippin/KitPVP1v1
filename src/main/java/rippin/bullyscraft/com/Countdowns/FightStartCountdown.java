@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import rippin.bullyscraft.com.Arena;
 import rippin.bullyscraft.com.ArenaManager;
+import rippin.bullyscraft.com.Configs.CachedData;
 import rippin.bullyscraft.com.KitPVP1v1;
 
 public class FightStartCountdown {
@@ -33,7 +34,7 @@ public class FightStartCountdown {
             else if (delay == 0){
                 ArenaManager.broadcastToArena(arena, ChatColor.AQUA + "Fight!");
 
-                // start fight countdown
+                new FightLengtCountdown(arena, CachedData.fightLength, plugin).startCountdown();
 
                 cancelTask(taskid);
             }

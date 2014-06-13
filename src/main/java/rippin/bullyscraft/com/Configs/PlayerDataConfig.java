@@ -27,7 +27,7 @@ public class PlayerDataConfig {
                 getFile().createNewFile();
                 reload(); //reload yml just in case
 
-                saveFile(getFile(), getConfig());
+                saveFile();
                 plugin.getServer().getLogger().info("PlayerData.yml has been created!");
             } catch (IOException e) {
 
@@ -60,9 +60,9 @@ public class PlayerDataConfig {
         return config;
     }
 
-    public static void saveFile(File file, FileConfiguration config) {
+    public static void saveFile() {
         try {
-            config.save(file);
+            getConfig().save(getFile());
         } catch (IOException e) {
             e.printStackTrace();
         }
