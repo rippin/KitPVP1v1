@@ -47,6 +47,24 @@ public class Arena {
         state = ArenaState.VACANT;
     }
 
+    public void disable(){
+        for (Player p : getPlayers()){
+            PlayerDataHandler.returnItemsAndLocation(p);
+        }
+        playersUUID.clear();
+        getPlayers().clear();
+        state = ArenaState.DISABLED;
+    }
+
+    public void enable(){
+        for (Player p : getPlayers()){
+            PlayerDataHandler.returnItemsAndLocation(p);
+        }
+        playersUUID.clear();
+        getPlayers().clear();
+        state = ArenaState.VACANT;
+    }
+
     public List<Location> getSpawns(){
         return spawns;
     }

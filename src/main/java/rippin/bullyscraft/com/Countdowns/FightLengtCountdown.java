@@ -8,7 +8,7 @@ import rippin.bullyscraft.com.ArenaState;
 import rippin.bullyscraft.com.Configs.CachedData;
 import rippin.bullyscraft.com.KitPVP1v1;
 
-public class FightLengtCountdown {
+public class FightLengtCountdown extends CountdownInterface {
 
     private Arena arena;
     private int delay;

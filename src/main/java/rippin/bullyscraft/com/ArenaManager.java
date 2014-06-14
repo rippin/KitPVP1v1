@@ -1,5 +1,7 @@
 package rippin.bullyscraft.com;
 
+import me.bullyscraft.com.Classes.Kit;
+import me.bullyscraft.com.Classes.KitManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -7,9 +9,10 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import rippin.bullyscraft.com.Configs.ArenaConfig;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import rippin.bullyscraft.com.Requests.Request;
+import rippin.bullyscraft.com.Requests.RequestManager;
+
+import java.util.*;
 
 public class ArenaManager {
  private static List<Arena> allArenas = new ArrayList<Arena>();
@@ -110,16 +113,16 @@ public class ArenaManager {
     }
 
     public static boolean isArena(String name) {
-        boolean exists = false;
+
 
         for (Arena arena : getAllArenas()) {
             if (arena != null && arena.getName() != null) {
                 if (arena.getName().equalsIgnoreCase(name)) {
-                    exists = true;
+                    return true;
                 }
             }
         }
-        return exists;
+        return false;
     }
 
     public static void broadcastToArena(Arena arena, String message){
@@ -129,5 +132,84 @@ public class ArenaManager {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 
         }
+    }
+
+    public static boolean sendRequest(Player sender, Player receiver, String ArenaName, String kitName, String bid){
+    if (sender != null && receiver != null) {
+       if (!RequestManager.hasSentActiveRequest(sender)){
+        if (isArena(ArenaName)){
+         Arena a = getArena(ArenaName);
+        if (a.getState() == ArenaState.VACANT){
+            if (KitManager.getKit(kitName) != null){
+                Kit k = KitManager.getKit(kitName);
+                if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
+                    if (isNumeric(bid)){
+                        Request r = new Request(a, k, sender, receiver, bid);
+                        RequestManager.addRequest(r);
+                        r.sendRequest();
+                        return true;
+                    }
+                    else{
+                        sender.sendMessage(ChatColor.RED + "Bid is not numeric? Or argument error.");
+                    }
+                 }
+            }
+            else{
+                sender.sendMessage(ChatColor.RED + "That Kit does not seem to exist.");
+            }
+        }
+            else{
+            sender.sendMessage(ChatColor.RED + "That arena is currently in use or disabled. Do /1v1 arenas to find a vacant arena.");
+        }
+       }
+        else{
+            sender.sendMessage(ChatColor.RED + "That arena does not seem to exist.");
+        }
+      }
+        else{
+           sender.sendMessage(ChatColor.RED + "You may only have 1 active 1v1 request. Wait until it expires or do /1v1 cancel");
+       }
+    }
+
+        return false;
+    }
+
+    public static boolean sendRequest(Player sender, Player receiver, String ArenaName, String kitName){
+        if (sender != null && receiver != null) {
+            if (!RequestManager.hasSentActiveRequest(sender)){
+                if (isArena(ArenaName)){
+                    Arena a = getArena(ArenaName);
+                    if (a.getState() == ArenaState.VACANT){
+                        if (KitManager.getKit(kitName) != null){
+                            Kit k = KitManager.getKit(kitName);
+                            if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
+                               Request r = new Request(a, k, sender, receiver);
+                                    RequestManager.addRequest(r);
+                                    r.sendRequest();
+                                    return true;
+
+                            }
+                        }
+                        else{
+                            sender.sendMessage(ChatColor.RED + "That Kit does not seem to exist.");
+                        }
+                    }
+                    else{
+                        sender.sendMessage(ChatColor.RED + "That arena is currently in use or disabled. Do /1v1 arenas to find a vacant arena.");
+                    }
+                }
+                else{
+                    sender.sendMessage(ChatColor.RED + "That arena does not seem to exist.");
+                }
+            }
+            else{
+                sender.sendMessage(ChatColor.RED + "You may only have 1 active 1v1 request. Wait until it expires or do /1v1 cancel");
+            }
+        }
+        return false;
+    }
+
+    public static boolean isNumeric(String str) {
+        return str.matches("-?\\d+(\\.\\d+)?");
     }
 }

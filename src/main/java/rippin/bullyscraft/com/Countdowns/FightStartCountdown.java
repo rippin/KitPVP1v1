@@ -1,18 +1,17 @@
 package rippin.bullyscraft.com.Countdowns;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import rippin.bullyscraft.com.Arena;
 import rippin.bullyscraft.com.ArenaManager;
 import rippin.bullyscraft.com.Configs.CachedData;
 import rippin.bullyscraft.com.KitPVP1v1;
 
-public class FightStartCountdown {
-
+public class FightStartCountdown extends CountdownInterface {
     private Arena arena;
     private int delay;
     private KitPVP1v1 plugin;
     private int taskid;
+
     public FightStartCountdown(Arena arena, int delay, KitPVP1v1 plugin){
         this.arena = arena;
         this.delay = delay;
