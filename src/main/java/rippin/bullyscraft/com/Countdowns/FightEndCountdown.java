@@ -9,7 +9,7 @@ public class FightEndCountdown extends CountdownInterface {
 private Arena arena;
 private int delay;
 private KitPVP1v1 plugin;
-private int taskid;
+private int taskid = -2;
 
     public FightEndCountdown(Arena arena, int delay, KitPVP1v1 plugin){
         this.arena = arena;

@@ -29,7 +29,7 @@ public class PlayerDataHandler {
        config.set(uuid + ".Inventory", inventory); //set inv
        config.set(uuid + ".Potions", potionStringList); //set potions
 
-       config.set(uuid + ".Location.World", location.getWorld().toString());
+       config.set(uuid + ".Location.World", location.getWorld().getName());
        config.set(uuid + ".Location.X", location.getX());
        config.set(uuid + ".Location.Y", location.getY());
        config.set(uuid + ".Location.Z", location.getZ());
@@ -55,7 +55,7 @@ public class PlayerDataHandler {
         player.getInventory().setArmorContents(oldInv.getArmorContents());
         player.teleport(loc);
         config.set(uuid, null); // To delete saved data
-
+        PlayerDataConfig.saveFile();
     }
 
     private static Location parseLoc(String uuid){

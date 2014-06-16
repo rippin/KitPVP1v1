@@ -1,0 +1,15 @@
+main: rippin.bullyscraft.com.KitPVP1v1
+name: Bully1v1
+author: Rippin/RlPN
+description: 1v1 Plugin for BullyPVP
+version: 0.1
+depend: [BullyPVP]
+commands:
+  1v1:
+    usage: |
+      /1v1 [player] [arena] [kit] - Send 1v1 request.
+      /1v1 [player] [arena] [kit] [bid] Send 1v1 request with a bid.
+      /1v1 cancel - Cancel sent request.
+      /1v1 accept [player] - Accept 1v1 request from player
+      /1v1 deny [player] - Deny request from player.
+      /1v1 arenas - View arenas.

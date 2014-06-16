@@ -30,6 +30,6 @@ public class CommandHelper {
 		sender.sendMessage(ChatColor.RED + "Unknown command! Use /help for the commands!");
 	}
     public void helpMessage(){
-        // sender.sendMessage();
+        sender.sendMessage(cmd.getUsage());
     }
 }

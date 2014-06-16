@@ -4,6 +4,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import rippin.bullyscraft.com.KitPVP1v1;
 
+
 import java.io.*;
 
 public class ArenaConfig {
@@ -24,10 +25,11 @@ public class ArenaConfig {
 		if (!(getFile().exists())){
 			plugin.getServer().getLogger().info("Arenas.yml not found. Creating now...");
 			try {
-				getFile().createNewFile();
+                plugin.getDataFolder().mkdir();
+                getFile().createNewFile();
                 reload(); //reload yml just in case
 
-				saveFile(getFile(), getConfig());
+				saveFile();
 				plugin.getServer().getLogger().info("Arenas.yml has been created!");
 			} catch (IOException e) {
 				
@@ -60,9 +62,9 @@ public class ArenaConfig {
 		return config;
 	}
 
-	public static void saveFile(File file, FileConfiguration config) {
+	public static void saveFile() {
 		try {
-			config.save(file);
+			config.save(getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -19,7 +19,8 @@ public class Request {
     private String receiverUUID;
     private String bid;
     int taskid;
-    Request thisRequest;
+    private boolean isRunning = false;
+    private Request thisRequest;
     public Request(Arena arena, Kit k, Player sender, Player receiver, String bid){
         this.arena = arena;
         this.k = k;
@@ -34,12 +35,15 @@ public class Request {
         this.k = k;
         this.senderUUID = sender.getUniqueId().toString();
         this.receiverUUID = receiver.getUniqueId().toString();
+        thisRequest = this;
     }
 
     public void sendRequest(){
-       final Player receiver = Bukkit.getPlayer(UUID.fromString(receiverUUID));
+       isRunning = true;
+        final Player receiver = Bukkit.getPlayer(UUID.fromString(receiverUUID));
        final Player sender = Bukkit.getPlayer(UUID.fromString(senderUUID));
         if (receiver.isOnline()){
+            sender.sendMessage(ChatColor.GREEN + "1v1 request has been sent to " + ChatColor.AQUA + receiver.getName());
             if (bid != null) {
             receiver.sendMessage(ChatColor.GREEN + sender.getName() + ChatColor.AQUA + " has challenged you to a 1v1 on Arena " + ChatColor.GREEN + getArena().getName()
             + ChatColor.AQUA + " using the Kit " + ChatColor.GREEN + getK().getName() + ChatColor.AQUA + "bidding " + ChatColor.GREEN + bid +
@@ -55,6 +59,7 @@ public class Request {
            taskid = Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(KitPVP1v1.plugin, new BukkitRunnable() {
                 @Override
                 public void run() {
+                    isRunning = false;
                     receiver.sendMessage(ChatColor.RED + "The 1v1 request from " + sender.getName() + " has expired.");
                     sender.sendMessage(ChatColor.RED + "Your 1v1 request to " + receiver.getName() + " has expired.");
                     RequestManager.removeRequest(thisRequest);
@@ -67,7 +72,7 @@ public class Request {
         }
     }
 
-    public void cancelTask(int taskid){
+    public void cancelTask(){
         Bukkit.getServer().getScheduler().cancelTask(taskid);
     }
 
@@ -109,6 +114,10 @@ public class Request {
 
     public void setBid(String bid) {
         this.bid = bid;
+    }
+
+    public boolean isRunning(){
+        return isRunning;
     }
 
 }

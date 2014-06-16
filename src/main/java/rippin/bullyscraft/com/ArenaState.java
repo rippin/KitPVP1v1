@@ -2,7 +2,7 @@ package rippin.bullyscraft.com;
 
 
 public enum ArenaState {
-VACANT ("VACANT"), OCCUPIED("OCCUPIED"), STARTING("STARTING"), ENDING("ENDING"), DISABLED("DISABLED");
+VACANT ("Vacant"), OCCUPIED("Occupied"), STARTING("Starting"), ENDING("Ending"), DISABLED("Disabled");
 
     private String state;
 

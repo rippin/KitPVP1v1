@@ -1,7 +1,5 @@
 package rippin.bullyscraft.com.Configs;
 
-
-import me.bullyscraft.com.BullyPVP;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import rippin.bullyscraft.com.KitPVP1v1;
@@ -23,11 +21,12 @@ public class Config {
         create();
 	}
 
-	public static void create(){
+	private static void create(){
 		if (!(getFile().exists())){
 			plugin.getServer().getLogger().info("Config.yml not found. Creating now...");
 			try {
-				getFile().createNewFile();
+                plugin.getDataFolder().mkdir();
+                getFile().createNewFile();
                 copy(plugin.getResource("config.yml"), configFile);
                 reload(); //reload yml just in case
 

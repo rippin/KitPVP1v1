@@ -24,6 +24,7 @@ public class PlayerDataConfig {
         if (!(getFile().exists())){
             plugin.getServer().getLogger().info("PlayerData.yml not found. Creating now...");
             try {
+                plugin.getDataFolder().mkdir();
                 getFile().createNewFile();
                 reload(); //reload yml just in case
 

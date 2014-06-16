@@ -1,7 +1,4 @@
 package rippin.bullyscraft.com;
-
-import me.bullyscraft.com.Classes.Kit;
-import me.bullyscraft.com.Classes.KitManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -9,8 +6,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import rippin.bullyscraft.com.Configs.ArenaConfig;
-import rippin.bullyscraft.com.Requests.Request;
-import rippin.bullyscraft.com.Requests.RequestManager;
+
 
 import java.util.*;
 
@@ -21,13 +17,13 @@ public class ArenaManager {
         ArenaConfig.getConfig().createSection("Arena." + name);
         Arena a = new Arena(name);
         getAllArenas().add(a);
-        ArenaConfig.saveFile(ArenaConfig.getFile(), ArenaConfig.getConfig());
+        ArenaConfig.saveFile();
         p.sendMessage(ChatColor.GREEN + "Arena " + name + " created");
 
     }
 
 
-    public static boolean loadArenas() {
+    public static void loadArenas() {
         getAllArenas().clear();
         try {
             for (String key : ArenaConfig.getConfig()
@@ -37,20 +33,19 @@ public class ArenaManager {
                 Arena a = new Arena(key);
                 allArenas.add(a);
                 parseSpawns(a);
-                return true;
+
             }
         } catch (NullPointerException e) {
             System.out.println("No arenas found!");
 
         }
-        return false;
     }
 
     public static void parseSpawns(Arena arena){
         String name = arena.getName();
+        int index = 0;
         for (String key : ArenaConfig.getConfig()
                 .getConfigurationSection("Arena." + name + ".Spawn").getKeys(false)) {
-        int index = 0;
         FileConfiguration config = ArenaConfig.getConfig();
 
         World w = Bukkit.getWorld(config.getString("Arena." + name + ".Spawn." + index + ".World"));
@@ -69,7 +64,7 @@ public class ArenaManager {
 
     public static void setSpawn(Arena arena, Location loc, int index){
         String name = arena.getName();
-        World w = loc.getWorld();
+        String w = loc.getWorld().getName();
         double x = loc.getX();
         double y = loc.getY();
         double z = loc.getZ();
@@ -86,6 +81,7 @@ public class ArenaManager {
         config.set("Arena." + name + ".Spawn." + index + ".Pitch", pitch);
 
         arena.setSpawn(loc, index);
+        ArenaConfig.saveFile();
     }
 
     public static List<Arena> getAllArenas() {
@@ -112,6 +108,15 @@ public class ArenaManager {
         return false;
     }
 
+    public static Arena getPlayersArenaUUID(String uuid){
+        for (Arena arena : getAllArenas()){
+            if (arena.getPlayersUUID().contains(uuid)){
+                return arena;
+            }
+        }
+        return null;
+    }
+
     public static boolean isArena(String name) {
 
 
@@ -134,82 +139,55 @@ public class ArenaManager {
         }
     }
 
-    public static boolean sendRequest(Player sender, Player receiver, String ArenaName, String kitName, String bid){
-    if (sender != null && receiver != null) {
-       if (!RequestManager.hasSentActiveRequest(sender)){
-        if (isArena(ArenaName)){
-         Arena a = getArena(ArenaName);
-        if (a.getState() == ArenaState.VACANT){
-            if (KitManager.getKit(kitName) != null){
-                Kit k = KitManager.getKit(kitName);
-                if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
-                    if (isNumeric(bid)){
-                        Request r = new Request(a, k, sender, receiver, bid);
-                        RequestManager.addRequest(r);
-                        r.sendRequest();
-                        return true;
-                    }
-                    else{
-                        sender.sendMessage(ChatColor.RED + "Bid is not numeric? Or argument error.");
-                    }
-                 }
-            }
-            else{
-                sender.sendMessage(ChatColor.RED + "That Kit does not seem to exist.");
-            }
-        }
-            else{
-            sender.sendMessage(ChatColor.RED + "That arena is currently in use or disabled. Do /1v1 arenas to find a vacant arena.");
-        }
-       }
-        else{
-            sender.sendMessage(ChatColor.RED + "That arena does not seem to exist.");
-        }
-      }
-        else{
-           sender.sendMessage(ChatColor.RED + "You may only have 1 active 1v1 request. Wait until it expires or do /1v1 cancel");
-       }
-    }
 
-        return false;
-    }
-
-    public static boolean sendRequest(Player sender, Player receiver, String ArenaName, String kitName){
-        if (sender != null && receiver != null) {
-            if (!RequestManager.hasSentActiveRequest(sender)){
-                if (isArena(ArenaName)){
-                    Arena a = getArena(ArenaName);
-                    if (a.getState() == ArenaState.VACANT){
-                        if (KitManager.getKit(kitName) != null){
-                            Kit k = KitManager.getKit(kitName);
-                            if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
-                               Request r = new Request(a, k, sender, receiver);
-                                    RequestManager.addRequest(r);
-                                    r.sendRequest();
-                                    return true;
-
-                            }
-                        }
-                        else{
-                            sender.sendMessage(ChatColor.RED + "That Kit does not seem to exist.");
-                        }
-                    }
-                    else{
-                        sender.sendMessage(ChatColor.RED + "That arena is currently in use or disabled. Do /1v1 arenas to find a vacant arena.");
-                    }
-                }
-                else{
-                    sender.sendMessage(ChatColor.RED + "That arena does not seem to exist.");
-                }
-            }
-            else{
-                sender.sendMessage(ChatColor.RED + "You may only have 1 active 1v1 request. Wait until it expires or do /1v1 cancel");
-            }
-        }
-        return false;
-    }
 
     public static boolean isNumeric(String str) {
         return str.matches("-?\\d+(\\.\\d+)?");
+    }
+
+    public static void enableAllArenas(Player sender){
+        for (Arena a : getAllArenas()){
+            a.enable();
+            sender.sendMessage(ChatColor.GREEN + a.getName() + " has been enabled.");
+        }
+
+    }
+
+    public static void disableAllArenas(Player sender){
+        for (Arena a : getAllArenas()){
+            a.disable();
+            sender.sendMessage(ChatColor.GREEN + a.getName() + " has been disabled.");
+        }
+
+    }
+
+    public static void enableArena(Arena a, Player sender){
+        if (a != null){
+            a.enable();
+            sender.sendMessage(ChatColor.GREEN + a.getName() + " has been enabled.");
+        }
+
+        else {
+            sender.sendMessage(ChatColor.RED + " that arena does not exist.");
+        }
+    }
+
+    public static void disableArena(Arena a, Player sender){
+        if (a != null){
+            a.disable();
+            sender.sendMessage(ChatColor.GREEN + a.getName() + " has been disbled.");
+        }
+
+        else {
+            sender.sendMessage(ChatColor.RED + " that arena does not exist.");
+        }
+    }
+    public static void listArenas(Player sender){
+        for (Arena a : getAllArenas()){
+            if (a.getSpawns().length != 0) {
+            sender.sendMessage(ChatColor.GREEN + "Arena " + ChatColor.AQUA
+                    + a.getName() + ChatColor.GREEN + " currently " + ChatColor.AQUA + a.getState().toString());
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
 package rippin.bullyscraft.com;
 
+import me.bullyscraft.com.Classes.Kit;
+import me.bullyscraft.com.Classes.KitManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -16,7 +18,7 @@ public class Arena {
     private ArenaState state;
     private boolean premium = false;
 
-    private List<Location> spawns = new ArrayList<Location>();
+    private Location spawns[] = new Location[2] ;
     private List<String> playersUUID = new ArrayList<String>();
 
     public Arena(String name){
@@ -24,17 +26,23 @@ public class Arena {
     state = ArenaState.VACANT;
     }
 
-    public void start(String kit){
-    state = ArenaState.STARTING;
-      for (Player p : getPlayers()){
+    public void start(Kit kit, List<Player> players){
+     getPlayersUUID().clear();
+     state = ArenaState.STARTING;
+        int i = 0;
+      for (Player p : players){
           PlayerDataHandler.savePlayerData(p);
+          kit.giveKit(p);
+          getPlayersUUID().add(p.getUniqueId().toString());
+          p.teleport(getSpawns()[i]);
+          i++;
       }
     new FightStartCountdown(this, CachedData.startDelay, KitPVP1v1.plugin).startCountdown();
 
     }
 
     public void setSpawn(Location loc, int index){
-        spawns.set(index, loc);
+        spawns[index] = loc;
 
     }
 
@@ -65,7 +73,7 @@ public class Arena {
         state = ArenaState.VACANT;
     }
 
-    public List<Location> getSpawns(){
+    public Location[] getSpawns(){
         return spawns;
     }
 
@@ -92,6 +100,10 @@ public class Arena {
     public void setPlayersUUID(String uuid1, String uuid2){
         getPlayersUUID().add(uuid1);
         getPlayersUUID().add(uuid2);
+    }
+    public void removePlayer(Player player){
+        getPlayers().remove(player);
+        getPlayersUUID().remove(player.getUniqueId().toString());
     }
 
     public void setPlayersUUID(List<String> players){

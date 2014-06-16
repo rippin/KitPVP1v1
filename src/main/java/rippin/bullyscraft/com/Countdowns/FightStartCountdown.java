@@ -20,22 +20,26 @@ public class FightStartCountdown extends CountdownInterface {
     }
 
     public void startCountdown(){
-
-       taskid =  plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+        FreezePlayer.freezeArenaPlayers(arena);
+        taskid =  plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
             @Override
             public void run() {
+            if (arena.getPlayersUUID().size() < 2){
+                ArenaManager.broadcastToArena(arena, ChatColor.RED + "Your opponent has left the 1v1, ending now.");
+                cancelTask(taskid);
+                new FightEndCountdown(arena, CachedData.endDelay, plugin);
+            }
             if (delay == 10){
                 ArenaManager.broadcastToArena(arena, ChatColor.GREEN + "1v1 will start in 10 seconds");
             }
-            else if (delay <= 5){
+            else if (delay <= 5 && delay >= 1){
                 ArenaManager.broadcastToArena(arena, ChatColor.GREEN + "1v1 will start in " + delay + " seconds");
             }
             else if (delay == 0){
                 ArenaManager.broadcastToArena(arena, ChatColor.AQUA + "Fight!");
-
-                new FightLengtCountdown(arena, CachedData.fightLength, plugin).startCountdown();
-
+                FreezePlayer.unFreezeArenaPlayers(arena);
                 cancelTask(taskid);
+                new FightLengtCountdown(arena, CachedData.fightLength, plugin).startCountdown();
             }
 
               --delay;
