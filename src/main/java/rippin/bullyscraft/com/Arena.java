@@ -17,6 +17,8 @@ public class Arena {
     private String name;
     private ArenaState state;
     private boolean premium = false;
+    private boolean bidBoolean = false;
+    private int bid;
 
     private Location spawns[] = new Location[2] ;
     private List<String> playersUUID = new ArrayList<String>();
@@ -32,7 +34,7 @@ public class Arena {
         int i = 0;
       for (Player p : players){
           PlayerDataHandler.savePlayerData(p);
-          kit.giveKit(p);
+          kit.giveKit1v1(p);
           getPlayersUUID().add(p.getUniqueId().toString());
           p.teleport(getSpawns()[i]);
           i++;
@@ -53,6 +55,8 @@ public class Arena {
         playersUUID.clear();
         getPlayers().clear();
         state = ArenaState.VACANT;
+        bidBoolean = false;
+        bid = 0;
     }
 
     public void disable(){
@@ -117,5 +121,18 @@ public class Arena {
     }
     public boolean getPremium(){
         return premium;
+    }
+    public boolean isThereBid(){
+        return bidBoolean;
+    }
+    public int getBid(){
+        return bid;
+    }
+    public void setBid(int bid){
+        this.bid = bid;
+    }
+
+    public void setBidBoolean(boolean bid){
+        this.bidBoolean = bid;
     }
 }

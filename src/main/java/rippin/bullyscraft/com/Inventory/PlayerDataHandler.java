@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
+import rippin.bullyscraft.com.Configs.CachedData;
 import rippin.bullyscraft.com.Configs.PlayerDataConfig;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,6 +27,7 @@ public class PlayerDataHandler {
            String string = PotionSerialization.potionEffectToString(effect);
             potionStringList.add(string);
        }
+
        config.set(uuid + ".Inventory", inventory); //set inv
        config.set(uuid + ".Potions", potionStringList); //set potions
 
@@ -35,8 +37,9 @@ public class PlayerDataHandler {
        config.set(uuid + ".Location.Z", location.getZ());
        config.set(uuid + ".Location.Yaw", location.getYaw());
        config.set(uuid + ".Location.Pitch", location.getPitch());
-
-        PlayerDataConfig.saveFile();
+       Wipe.wipe(player); //remove everything from player
+       CachedData.getSavedUUIDList().add(uuid); //add to the list
+       PlayerDataConfig.saveFile();
     }
     // add method to clear and give kit and crap
     public static void returnItemsAndLocation(Player player){
@@ -56,6 +59,7 @@ public class PlayerDataHandler {
         player.teleport(loc);
         config.set(uuid, null); // To delete saved data
         PlayerDataConfig.saveFile();
+        CachedData.getSavedUUIDList().remove(player.getUniqueId().toString()); // Remove from the cached list.
     }
 
     private static Location parseLoc(String uuid){

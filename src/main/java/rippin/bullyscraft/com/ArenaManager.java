@@ -12,7 +12,7 @@ import java.util.*;
 
 public class ArenaManager {
  private static List<Arena> allArenas = new ArrayList<Arena>();
-
+ private static List<String> wasInArena = new ArrayList<String>();
     public static void createArena(Player p, String name) {
         ArenaConfig.getConfig().createSection("Arena." + name);
         Arena a = new Arena(name);
@@ -101,7 +101,7 @@ public class ArenaManager {
     }
     public static boolean isInArena(Player player) {
         for (Arena arena : getAllArenas()) {
-            if (arena.getPlayersUUID().contains(player.getUniqueId())){
+            if (arena.getPlayersUUID().contains(player.getUniqueId().toString())){
                 return true;
             }
         }
@@ -134,16 +134,12 @@ public class ArenaManager {
         List<String> players = arena.getPlayersUUID();
         for (String uuid : players){
             Player player = Bukkit.getServer().getPlayer(UUID.fromString(uuid));
+            if (player != null)
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 
         }
     }
 
-
-
-    public static boolean isNumeric(String str) {
-        return str.matches("-?\\d+(\\.\\d+)?");
-    }
 
     public static void enableAllArenas(Player sender){
         for (Arena a : getAllArenas()){
@@ -189,5 +185,14 @@ public class ArenaManager {
                     + a.getName() + ChatColor.GREEN + " currently " + ChatColor.AQUA + a.getState().toString());
             }
         }
+    }
+
+    public static boolean wasInArena(Player player){
+
+        return wasInArena.contains(player.getUniqueId().toString());
+    }
+
+    public static List<String> getWasInArena(){
+    return wasInArena;
     }
 }

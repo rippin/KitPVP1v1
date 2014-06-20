@@ -32,10 +32,14 @@ public class KitPVP1v1Commands extends CommandAbstract{
         else if (args[0].equalsIgnoreCase("disableAll")){
             if (sender.hasPermission("1v1.admin"))
             ArenaManager.disableAllArenas((Player) sender);
+            else
+                helper.noPermission();
         }
         else if (args[0].equalsIgnoreCase("enableAll")) {
             if (sender.hasPermission("1v1.admin"))
                 ArenaManager.enableAllArenas((Player) sender);
+            else
+                helper.noPermission();
            }
             else {
             helper.wrongArguments();
@@ -47,6 +51,8 @@ public class KitPVP1v1Commands extends CommandAbstract{
                     Arena a = ArenaManager.getArena(args[1]);
                     ArenaManager.disableArena(a, (Player) sender);
                 }
+                else
+                    helper.noPermission();
             }
             else if (args[0].equalsIgnoreCase("enable")){
                 if (sender.hasPermission("1v1.admin")) {
@@ -69,21 +75,27 @@ public class KitPVP1v1Commands extends CommandAbstract{
             else if (args[0].equalsIgnoreCase("deny")){
 
                     Player p = Bukkit.getPlayerExact(args[1]);
-                    if (p != null && p.isOnline()){
+                    if (p != null && p.isOnline() && (!p.getUniqueId().equals(((Player) sender).getUniqueId()))){
                         if (RequestManager.hasActiveRequestFromSpecificPlayer(p, (Player)sender)){
                         Request r = RequestManager.getRequest(((Player) sender).getUniqueId().toString());
                         RequestManager.removeRequest(r);
                         p.sendMessage(ChatColor.RED + sender.getName() + " has denied your 1v1 request.");
                         sender.sendMessage(ChatColor.GREEN + "1v1 request has been denied.");
                     }
+                        else {
+                            sender.sendMessage(ChatColor.RED + "You do not have a active request from that person.");
+                        }
                 }
-                    else {
-                        sender.sendMessage(ChatColor.RED + "You do not have a active request from that person maybe they left?");
+                else {
+                        sender.sendMessage(ChatColor.RED + "Person doesn't seem to be online. Will expire soon.");
                     }
 
             }
             else if (args[0].equalsIgnoreCase("createArena")){
+                    if (sender.hasPermission("1v1.admin"))
                     ArenaManager.createArena((Player)sender, args[1]);
+                    else
+                        helper.noPermission();
             }
             else {
                 helper.wrongArguments();
@@ -91,9 +103,10 @@ public class KitPVP1v1Commands extends CommandAbstract{
         }
         else if (args.length == 3){
             if (args[0].equalsIgnoreCase("setspawn")){
+                if (sender.hasPermission("1v1.admin")) {
                 if (ArenaManager.isArena(args[1])){
                    Arena a = ArenaManager.getArena(args[1]);
-                    if (ArenaManager.isNumeric(args[2])){
+                    if (RequestManager.isNumeric(args[2])){
                        int i = Integer.parseInt(args[2]);
                        i = (i - 1);
                         i = (i <= 0)? (0) : (i);
@@ -102,14 +115,17 @@ public class KitPVP1v1Commands extends CommandAbstract{
                         sender.sendMessage(ChatColor.GREEN + "Spawn set at index " + i);
                     }
                 }
+              }
+                else
+                    helper.noPermission();
             }
             else {
             Player receiver = Bukkit.getPlayerExact(args[0]);
             if (receiver != null && receiver.isOnline()){
                 if (!((Player) sender).getUniqueId().equals(receiver.getUniqueId())) {
-                RequestManager.sendRequest((Player)sender, receiver, args[1], args[2]);
+                    RequestManager.sendRequest((Player)sender, receiver, args[1], args[2]);
                 }
-                    else {
+                else {
                     sender.sendMessage(ChatColor.RED + "Dum dum you can't 1v1 yourself.");
                 }
             }
@@ -122,7 +138,12 @@ public class KitPVP1v1Commands extends CommandAbstract{
         else if (args.length == 4){
             Player receiver = Bukkit.getPlayerExact(args[0]);
             if (receiver != null && receiver.isOnline()){
-                RequestManager.sendRequest((Player)sender, receiver, args[1], args[2], args[3]);
+                if (!((Player) sender).getUniqueId().equals(receiver.getUniqueId())) {
+                    RequestManager.sendRequest((Player)sender, receiver, args[1], args[2], args[3]);
+                }
+                else {
+                    sender.sendMessage(ChatColor.RED + "Dum dum you can't 1v1 yourself.");
+                }
             }
             else {
                 sender.sendMessage(ChatColor.RED + "The player " + args[0] + " is not online or does not exist.");

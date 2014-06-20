@@ -14,9 +14,9 @@ import java.util.List;
 public class RequestManager {
 private static List<Request> request = new ArrayList<Request>();
 
-    public static Request getRequest(String recieverUUID){
+    public static Request getRequest(String UUID){
        for (Request r : getAllRequest()){
-           if (r.getReceiverUUID().equalsIgnoreCase(recieverUUID)){
+           if (r.getReceiverUUID().equalsIgnoreCase(UUID) || r.getSenderUUID().equalsIgnoreCase(UUID)){
                return r;
            }
        }
@@ -89,7 +89,7 @@ private static List<Request> request = new ArrayList<Request>();
     public static void cancelSentRequest(Player player){
         if (hasSentActiveRequest(player)){
            Request r = getRequest(player.getUniqueId().toString());
-            player.sendMessage(ChatColor.GREEN + " 1v1 Request has been canceled");
+            player.sendMessage(ChatColor.GREEN + "1v1 Request has been canceled");
            removeRequest(r);
 
         }
@@ -107,8 +107,8 @@ private static List<Request> request = new ArrayList<Request>();
                     if (KitManager.getKit(kitName) != null){
                         Kit k = KitManager.getKit(kitName);
                         if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
-                            if (ArenaManager.isNumeric(bid)){
-                                Request r = new Request(a, k, sender, receiver, bid);
+                            if (isNumeric(bid)){
+                                Request r = new Request(a, k, sender, receiver, Integer.parseInt(bid));
                                 RequestManager.addRequest(r);
                                 r.sendRequest();
                                 return true;
@@ -164,5 +164,13 @@ private static List<Request> request = new ArrayList<Request>();
         }
         return false;
     }
+
+    public static boolean isNumeric(String str) {
+        if (str == null){
+            return false;
+        }
+        return str.matches("-?\\d+(\\.\\d+)?");
+    }
+
 
 }

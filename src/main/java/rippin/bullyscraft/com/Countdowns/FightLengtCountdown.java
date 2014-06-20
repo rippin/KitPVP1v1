@@ -27,9 +27,8 @@ public class FightLengtCountdown extends CountdownInterface {
             @Override
             public void run() {
                 if (arena.getPlayersUUID().size() < 2){
-                    ArenaManager.broadcastToArena(arena, ChatColor.RED + "Your opponent has left the 1v1, ending now.");
+                    new FightEndCountdown(arena, CachedData.endDelay, plugin).startCountdown();
                     cancelTask(taskid);
-                    new FightEndCountdown(arena, CachedData.endDelay, plugin);
                 }
             if (delay == 300){
                 ArenaManager.broadcastToArena(arena, ChatColor.GREEN + "5 minutes remain in the 1v1.");

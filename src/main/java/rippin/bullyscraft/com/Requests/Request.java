@@ -1,6 +1,9 @@
 package rippin.bullyscraft.com.Requests;
 
+import me.bullyscraft.com.BullyPVP;
 import me.bullyscraft.com.Classes.Kit;
+import me.bullyscraft.com.Stats.PlayerStatsObject;
+import me.bullyscraft.com.Stats.PlayerStatsObjectManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -11,17 +14,19 @@ import rippin.bullyscraft.com.KitPVP1v1;
 
 import java.util.UUID;
 
+import static rippin.bullyscraft.com.KitPVP1v1.*;
+
 
 public class Request {
     private Arena arena;
     private Kit k;
     private String senderUUID;
     private String receiverUUID;
-    private String bid;
+    private int bid;
     int taskid;
     private boolean isRunning = false;
     private Request thisRequest;
-    public Request(Arena arena, Kit k, Player sender, Player receiver, String bid){
+    public Request(Arena arena, Kit k, Player sender, Player receiver, int bid){
         this.arena = arena;
         this.k = k;
         this.senderUUID = sender.getUniqueId().toString();
@@ -43,20 +48,40 @@ public class Request {
         final Player receiver = Bukkit.getPlayer(UUID.fromString(receiverUUID));
        final Player sender = Bukkit.getPlayer(UUID.fromString(senderUUID));
         if (receiver.isOnline()){
-            sender.sendMessage(ChatColor.GREEN + "1v1 request has been sent to " + ChatColor.AQUA + receiver.getName());
-            if (bid != null) {
+            if (bid != 0 && bid >=1) {
+                PlayerStatsObject psoReceiver = PlayerStatsObjectManager.getPSO(receiver, BullyPVP.instance);
+                PlayerStatsObject psoSender = PlayerStatsObjectManager.getPSO(sender, BullyPVP.instance);
+                if (psoReceiver != null && psoSender != null){
+                    if (psoReceiver.getCoins() >= bid && psoSender.getCoins() >= bid){
+                        arena.setBid(bid);
+                        arena.setBidBoolean(true);
+                        sender.sendMessage(ChatColor.GREEN + "1v1 request has been sent to " + ChatColor.AQUA + receiver.getName());
+                    }
+                    else {
+                        sender.sendMessage(ChatColor.RED + "Either you or " + receiver.getName() + " do not have enough coins for the bid.");
+                        RequestManager.removeRequest(thisRequest);
+                        return;
+                    }
+                }
+                else{
+                    sender.sendMessage(ChatColor.RED + "Something weird happened. Tell RlPN, this is not supposed to happen.");
+                    RequestManager.removeRequest(thisRequest);
+                    return;
+                }
+
             receiver.sendMessage(ChatColor.GREEN + sender.getName() + ChatColor.AQUA + " has challenged you to a 1v1 on Arena " + ChatColor.GREEN + getArena().getName()
-            + ChatColor.AQUA + " using the Kit " + ChatColor.GREEN + getK().getName() + ChatColor.AQUA + "bidding " + ChatColor.GREEN + bid +
+            + ChatColor.AQUA + " using the Kit " + ChatColor.GREEN + getK().getName() + ChatColor.AQUA + " bidding " + ChatColor.GREEN + bid + ChatColor.AQUA + " coins" +
                     ChatColor.AQUA + ". Accept or deny the 1v1 by doing /1v1 accept " + ChatColor.GREEN + sender.getName() +
                     ChatColor.AQUA + " or /1v1 deny " + ChatColor.GREEN + sender.getName() );
             }
             else {
+                sender.sendMessage(ChatColor.GREEN + "1v1 request has been sent to " + ChatColor.AQUA + receiver.getName());
                 receiver.sendMessage(ChatColor.GREEN + sender.getName() + ChatColor.AQUA + " has challenged you to a 1v1 on Arena " + ChatColor.GREEN + getArena().getName()
                         + ChatColor.AQUA + " using the Kit " + ChatColor.GREEN + getK().getName() + ChatColor.AQUA
                         + ". Accept or deny the 1v1 by doing /1v1 accept " + ChatColor.GREEN + sender.getName() +
                         ChatColor.AQUA + " or /1v1 deny " + ChatColor.GREEN + sender.getName());
             }
-           taskid = Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(KitPVP1v1.plugin, new BukkitRunnable() {
+           taskid = Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new BukkitRunnable() {
                 @Override
                 public void run() {
                     isRunning = false;
@@ -69,6 +94,7 @@ public class Request {
         }
         else {
             sender.sendMessage(ChatColor.RED + "It seems the player has logged off. Retry later.");
+            RequestManager.removeRequest(thisRequest);
         }
     }
 
@@ -108,11 +134,11 @@ public class Request {
         this.receiverUUID = receiverUUID;
     }
 
-    public String getBid() {
+    public int getBid() {
         return bid;
     }
 
-    public void setBid(String bid) {
+    public void setBid(int bid) {
         this.bid = bid;
     }
 

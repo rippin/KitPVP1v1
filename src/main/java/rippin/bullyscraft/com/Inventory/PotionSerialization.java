@@ -10,7 +10,7 @@ public class PotionSerialization {
         PotionEffectType type = effect.getType();
         int amp = effect.getAmplifier();
         int duration = effect.getDuration();
-        String potionString = type.toString() + ":" + amp + "@" +duration;
+        String potionString = type.getName() + ":" + amp + "@" +duration;
 
         return potionString;
     }

@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4761330d-70b1-4acb-8157-941137f4e2d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/CachedData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightEndCountdown.java" />
-      <change type="MOVED" beforePath="C:\Users\EF\Desktop\java\KitPVP1v1\src\main\java\rippin\bullyscraft\com\Inventory\InventoryManager.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/BullyPVPStatsHook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BullyPVP.jar" afterPath="$PROJECT_DIR$/src/BullyPVP.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaState.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/PlayerDataConfig.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/PlayerDataConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KitPVP1v1.iml" afterPath="$PROJECT_DIR$/KitPVP1v1.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1Commands.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1Commands.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/KitPVP1v1Listeners.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/KitPVP1v1Listeners.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/Request.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/Request.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/RequestManager.java" afterPath="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/RequestManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KitPVP1v1.iws" />
@@ -76,50 +80,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="17" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemSerialization.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/ItemSerialization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="44" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="8636">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PlayerDataHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="65" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FightEndCountdown.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightEndCountdown.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="28" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.6780627" vertical-offset="51" max-vertical-offset="833">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#854#1156#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArenaManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="17" selection-start="2440" selection-end="2440" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="2176">
+            <state line="29" column="0" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
               <folding />
             </state>
           </provider>
@@ -128,50 +92,83 @@
       <file leaf-file-name="PotionSerialization.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+            <state line="6" column="13" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CachedData.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/CachedData.java">
+      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/Request.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="83" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+            <state line="49" column="33" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="2635">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+      <file leaf-file-name="RequestManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/RequestManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="1" selection-start="195" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+            <state line="111" column="61" selection-start="4084" selection-end="4084" vertical-scroll-proportion="0.0" vertical-offset="1887" max-vertical-offset="3094">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FightStartCountdown.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java">
+      <file leaf-file-name="FightLengtCountdown.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="799">
+            <state line="66" column="21" selection-start="2679" selection-end="2679" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1343">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerDataConfig.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/PlayerDataConfig.java">
+      <file leaf-file-name="FightEndCountdown.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightEndCountdown.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="25" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+            <state line="28" column="28" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KitPVP1v1Listeners.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/KitPVP1v1Listeners.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="35" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05733558" vertical-offset="0" max-vertical-offset="2669">
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1571#1572#0" expanded="false" />
-                <element signature="e#1604#1605#0" expanded="false" />
-                <element signature="e#1654#1655#0" expanded="false" />
-                <element signature="e#1683#1684#0" expanded="false" />
+                <element signature="e#3520#3701#0" expanded="true" />
+                <element signature="e#3686#3687#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BullyPVPStatsHook.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/BullyPVPStatsHook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="52" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="595">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KitPVP1v1Commands.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1Commands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="17" selection-start="5702" selection-end="5702" vertical-scroll-proportion="0.0" vertical-offset="1971" max-vertical-offset="2652">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,26 +189,41 @@
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arenas.java" />
         <option value="$PROJECT_DIR$/src/main/resources/arenas.yml" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/rippin/bullyscraft/com/Countdowns/GameStartCountdown.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/KitPVP1v1.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/PlayerLists.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ArenaConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/ItemSerialization.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/PlayerDataConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/InventoryManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaState.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ConfigData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/CommandInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/CountdownInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/SendRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/SendRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1CommandExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ConfigManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FreezePlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightEndCountdown.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/PlayerDataConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ArenaConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/CommandHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/KitPVP1v1.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/CachedData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/Request.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/RequestManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightEndCountdown.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java" />
         <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1Commands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/BullyPVPStatsHook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/KitPVP1v1Listeners.java" />
       </list>
     </option>
   </component>
@@ -247,8 +259,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -355,6 +367,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KitPVP1v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KitPVP1v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Listeners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KitPVP1v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KitPVP1v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Inventory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -419,6 +491,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KitPVP1v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KitPVP1v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -449,17 +551,45 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="849" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FullScreen" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="rippin.bullyscraft.com.Commands" />
       <recent name="rippin.bullyscraft.com" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.1v1">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -490,6 +620,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -515,19 +658,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -583,7 +713,36 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="0" />
+    <configuration default="false" name="1v1" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Maven.1v1" />
+    </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -617,10 +776,26 @@
       <created>1401610205503</created>
       <updated>1401610205503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="More workage.">
+      <created>1402620619916</created>
+      <updated>1402620619916</updated>
+    </task>
+    <task id="LOCAL-00003" summary="More workage.&#10;">
+      <created>1402787701987</created>
+      <updated>1402787701987</updated>
+    </task>
+    <task id="LOCAL-00004" summary="More workage.&#10;">
+      <created>1402787746413</created>
+      <updated>1402787746413</updated>
+    </task>
+    <task id="LOCAL-00005" summary="More workage.&#10;">
+      <created>1402955702483</created>
+      <updated>1402955702483</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -645,25 +820,25 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.015511893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27710843" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.020026702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.123159304" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.046854082" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31402004" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21745351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14323963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27309236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -684,13 +859,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.020026702" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23462088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -706,7 +881,9 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Started working on this again." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started working on this again." />
+    <MESSAGE value="More workage." />
+    <MESSAGE value="More workage.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="More workage.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -716,103 +893,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="80" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ArenaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="17" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="24" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/KitPVP1v1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="57" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="748">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#596#604#0" expanded="true" />
-            <element signature="e#1648#1656#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="9" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="2193">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ArenaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="17" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="38" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
@@ -833,22 +913,16 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/KitPVP1v1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="408">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="15" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1020">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#596#604#0" expanded="true" />
-            <element signature="e#1648#1656#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -907,22 +981,16 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/KitPVP1v1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="4" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="391">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="15" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1020">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#596#604#0" expanded="true" />
-            <element signature="e#1648#1656#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -954,149 +1022,216 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/src/BullyPVP.jar!/me/bullyscraft/com/BullyPVP.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/CommandAbstract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="408" />
+        <state line="12" column="0" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/CountdownInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="721" />
+        <state line="2" column="22" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/PlayerLists.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="49" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="969">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ArenaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="42" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+        <state line="5" column="13" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+        <state line="4" column="100" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/ItemSerialization.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FreezePlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="44" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="8636">
+        <state line="13" column="9" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ConfigManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="30" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/PlayerDataConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="25" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+        <state line="21" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1224">
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1571#1572#0" expanded="false" />
-            <element signature="e#1604#1605#0" expanded="false" />
-            <element signature="e#1654#1655#0" expanded="false" />
-            <element signature="e#1683#1684#0" expanded="false" />
+            <element signature="e#1619#1620#0" expanded="false" />
+            <element signature="e#1652#1653#0" expanded="false" />
+            <element signature="e#1702#1703#0" expanded="false" />
+            <element signature="e#1731#1732#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/ArenaConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="1" selection-start="195" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+        <state line="31" column="25" selection-start="886" selection-end="886" vertical-scroll-proportion="0.46978557" vertical-offset="201" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/CachedData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/CommandHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="83" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+        <state line="7" column="4" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+        <state line="27" column="47" selection-start="773" selection-end="773" vertical-scroll-proportion="-0.44741234" vertical-offset="659" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1CommandExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="55" selection-start="632" selection-end="632" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/ItemSerialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="13" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="8636">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="24" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Configs/CachedData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="31" selection-start="984" selection-end="1000" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/KitPVP1v1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="282" selection-end="282" vertical-scroll-proportion="0.24216524" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="22" selection-start="1074" selection-end="1074" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+        <state line="10" column="18" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#596#604#0" expanded="true" />
-            <element signature="e#1648#1656#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PotionSerialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="17" selection-start="2440" selection-end="2440" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="2176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="65" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightLengtCountdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="20" selection-start="2391" selection-end="2391" vertical-scroll-proportion="1.0986937" vertical-offset="110" max-vertical-offset="1105">
+        <state line="66" column="21" selection-start="2679" selection-end="2679" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="33" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Requests/RequestManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="61" selection-start="4084" selection-end="4084" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2907">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightStartCountdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="799">
+        <state line="27" column="91" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Countdowns/FightEndCountdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="28" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.6780627" vertical-offset="51" max-vertical-offset="833">
+        <state line="28" column="28" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Inventory/PlayerDataHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Arena.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="24" selection-start="1074" selection-end="1074" vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/ArenaManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="0" selection-start="6457" selection-end="6457" vertical-scroll-proportion="4.9032817" vertical-offset="306" max-vertical-offset="3247">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#854#1156#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
+            <element signature="e#450#458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Commands/KitPVP1v1Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="17" selection-start="5702" selection-end="5702" vertical-scroll-proportion="0.0" vertical-offset="1971" max-vertical-offset="2652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/BullyPVPStatsHook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="52" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rippin/bullyscraft/com/Listeners/KitPVP1v1Listeners.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="35" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05733558" vertical-offset="0" max-vertical-offset="2669">
+          <folding>
+            <element signature="e#3520#3701#0" expanded="true" />
+            <element signature="e#3686#3687#0" expanded="true" />
           </folding>
         </state>
       </provider>
