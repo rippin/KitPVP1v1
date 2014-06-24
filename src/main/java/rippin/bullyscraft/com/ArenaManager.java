@@ -181,8 +181,11 @@ public class ArenaManager {
     public static void listArenas(Player sender){
         for (Arena a : getAllArenas()){
             if (a.getSpawns().length != 0) {
-            sender.sendMessage(ChatColor.GREEN + "Arena " + ChatColor.AQUA
-                    + a.getName() + ChatColor.GREEN + " currently " + ChatColor.AQUA + a.getState().toString());
+            sender.sendMessage(ChatColor.GOLD + "Arena " + ChatColor.RED
+                    + a.getName() + ChatColor.GOLD + " currently: " + ChatColor.RED + a.getState().toString());
+/*                if (a.getState() != ArenaState.VACANT || a.getState() != ArenaState.DISABLED){
+
+          }  */
             }
         }
     }

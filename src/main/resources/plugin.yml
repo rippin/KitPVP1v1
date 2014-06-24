@@ -3,7 +3,7 @@ name: Bully1v1
 author: Rippin/RlPN
 description: 1v1 Plugin for BullyPVP
 version: 0.1
-depend: [BullyPVP]
+loadbefore: [BullyPVP]
 commands:
   1v1:
     usage: |

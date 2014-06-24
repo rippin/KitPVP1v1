@@ -16,6 +16,7 @@ public class KitPVP1v1 extends JavaPlugin {
      getServer().getPluginManager().registerEvents(new KitPVP1v1Listeners(this), this);
      ArenaManager.loadArenas();
      CachedData.loadSavedUUIDs();
+     CachedData.loadDisabledRequest();
     }
 
 

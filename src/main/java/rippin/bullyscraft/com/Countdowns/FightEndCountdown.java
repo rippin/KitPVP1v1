@@ -25,7 +25,7 @@ private int taskid = -2;
             public void run() {
             --delay;
             if (delay == 0){
-                ArenaManager.broadcastToArena(arena, "&aTeleporting...");
+                ArenaManager.broadcastToArena(arena, "&aTeleported.");
                 arena.end();
                 cancelTask(taskid);
             }

@@ -71,6 +71,9 @@ public class KitPVP1v1Commands extends CommandAbstract{
                         sender.sendMessage(ChatColor.RED + "1v1 request does not exist from that person or they logged off.");
                     }
                 }
+                else {
+                    sender.sendMessage(ChatColor.RED + "You do not have a active request from that player.");
+                }
             }
             else if (args[0].equalsIgnoreCase("deny")){
 

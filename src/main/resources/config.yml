@@ -6,3 +6,5 @@
 Request-Expire-Time: 60      #When a player sends a request how long until it has till it expires in seconds.
 
 PreventCombat: false  #Cancel 1v1 request if player is PVPing.
+
+Disabled-Request:

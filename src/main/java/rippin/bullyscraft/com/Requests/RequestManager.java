@@ -108,7 +108,13 @@ private static List<Request> request = new ArrayList<Request>();
                         Kit k = KitManager.getKit(kitName);
                         if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
                             if (isNumeric(bid)){
-                                Request r = new Request(a, k, sender, receiver, Integer.parseInt(bid));
+                                Request r;
+                                try {
+                                r = new Request(a, k, sender, receiver, Integer.parseInt(bid));
+                                } catch (NumberFormatException e){
+                                    r = new Request(a, k, sender, receiver);
+                                    sender.sendMessage(ChatColor.RED + "Number format error, reverting to no bid.");
+                                }
                                 RequestManager.addRequest(r);
                                 r.sendRequest();
                                 return true;
