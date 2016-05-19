@@ -23,9 +23,12 @@ public class Request {
     private String senderUUID;
     private String receiverUUID;
     private int bid;
+    private boolean isBid = false;
+    private int confirmBidRequest; //set to 1 when someone can accept bid request.
     int taskid;
     private boolean isRunning = false;
     private Request thisRequest;
+
     public Request(Arena arena, Kit k, Player sender, Player receiver, int bid){
         this.arena = arena;
         this.k = k;
@@ -53,8 +56,7 @@ public class Request {
                 PlayerStatsObject psoSender = PlayerStatsObjectManager.getPSO(sender, BullyPVP.instance);
                 if (psoReceiver != null && psoSender != null){
                     if (psoReceiver.getCoins() >= bid && psoSender.getCoins() >= bid){
-                        arena.setBid(bid);
-                        arena.setBidBoolean(true);
+                        isBid = true;
                         sender.sendMessage(ChatColor.GREEN + "1v1 request has been sent to " + ChatColor.AQUA + receiver.getName());
                     }
                     else {
@@ -146,4 +148,13 @@ public class Request {
         return isRunning;
     }
 
+    public boolean isBid () {
+        return isBid;
+    }
+
+    public int getConfirmBidRequest() { return confirmBidRequest; }
+
+    public void setConfirmBidRequest(int num){
+        this.confirmBidRequest = num;
+    }
 }

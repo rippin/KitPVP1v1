@@ -100,6 +100,9 @@ public class ArenaManager {
         return arena;
     }
     public static boolean isInArena(Player player) {
+        if (player == null){
+            return false;
+        }
         for (Arena arena : getAllArenas()) {
             if (arena.getPlayersUUID().contains(player.getUniqueId().toString())){
                 return true;

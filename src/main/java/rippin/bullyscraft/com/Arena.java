@@ -2,6 +2,7 @@ package rippin.bullyscraft.com;
 
 import me.bullyscraft.com.Classes.Kit;
 import me.bullyscraft.com.Classes.KitManager;
+import me.bullyscraft.com.Classes.RefillSoup;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -34,7 +35,8 @@ public class Arena {
         int i = 0;
       for (Player p : players){
           PlayerDataHandler.savePlayerData(p);
-          kit.giveKit1v1(p);
+          kit.giveKit(p);
+          RefillSoup.soup(p);
           getPlayersUUID().add(p.getUniqueId().toString());
           p.teleport(getSpawns()[i]);
           i++;

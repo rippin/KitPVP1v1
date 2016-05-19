@@ -61,26 +61,37 @@ public class KitPVP1v1Commands extends CommandAbstract{
                 }
             }
             else if (args[0].equalsIgnoreCase("accept")){
-                if (RequestManager.hasActiveRequest((Player)sender)){
-                    Request r = RequestManager.getRequest(((Player) sender).getUniqueId().toString());
-                    Player p = Bukkit.getPlayerExact(args[1]);
-                    if (p != null && p.isOnline()){
-                        RequestManager.acceptRequest(r, p, (Player)sender);
+                Player p = Bukkit.getPlayerExact(args[1]);
+                if (p != null && p.isOnline()){
+                if (RequestManager.hasActiveRequestFromSpecificPlayer(p, (Player)sender)){
+                    Request r = RequestManager.getSpecificRequest(p,((Player) sender));
+                    if (r.isBid()){
+                        if (r.getConfirmBidRequest() == 0) {
+                        sender.sendMessage(ChatColor.RED + "This 1v1 request has a bid of "
+                                + ChatColor.GREEN + r.getBid() + ChatColor.RED + " coins.  If you lose the 1v1 you WILL lose the coins." +
+                                "To continue please accept the 1v1 again by doing /1v1 accept [player]");
+                                r.setConfirmBidRequest(1);
+                            return;
+                        }
                     }
-                    else{
-                        sender.sendMessage(ChatColor.RED + "1v1 request does not exist from that person or they logged off.");
-                    }
+                    RequestManager.acceptRequest(r, p, (Player)sender);
+
                 }
                 else {
                     sender.sendMessage(ChatColor.RED + "You do not have a active request from that player.");
                 }
+              }
+                else{
+                    sender.sendMessage(ChatColor.RED + "1v1 request does not exist from that person or they logged off.");
+                }
+
             }
             else if (args[0].equalsIgnoreCase("deny")){
 
                     Player p = Bukkit.getPlayerExact(args[1]);
                     if (p != null && p.isOnline() && (!p.getUniqueId().equals(((Player) sender).getUniqueId()))){
                         if (RequestManager.hasActiveRequestFromSpecificPlayer(p, (Player)sender)){
-                        Request r = RequestManager.getRequest(((Player) sender).getUniqueId().toString());
+                            Request r = RequestManager.getSpecificRequest(p,((Player) sender));
                         RequestManager.removeRequest(r);
                         p.sendMessage(ChatColor.RED + sender.getName() + " has denied your 1v1 request.");
                         sender.sendMessage(ChatColor.GREEN + "1v1 request has been denied.");

@@ -14,13 +14,33 @@ import java.util.List;
 public class RequestManager {
 private static List<Request> request = new ArrayList<Request>();
 
-    public static Request getRequest(String UUID){
+    public static Request getRequestAsSender(String UUID){
        for (Request r : getAllRequest()){
-           if (r.getReceiverUUID().equalsIgnoreCase(UUID) || r.getSenderUUID().equalsIgnoreCase(UUID)){
+           if (r.getSenderUUID().equalsIgnoreCase(UUID)){
                return r;
            }
        }
           return null;
+    }
+
+    public static Request getSpecificRequest(Player sender, Player receiver){
+        String senderUUID = sender.getUniqueId().toString();
+        String receiverUUID = receiver.getUniqueId().toString();
+        for (Request r : getAllRequest()){
+            if (r.getSenderUUID().equalsIgnoreCase(senderUUID) && r.getReceiverUUID().equalsIgnoreCase(receiverUUID)){
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public static Request getAnyRequest(String uuid){
+        for (Request r : getAllRequest()){
+            if (r.getSenderUUID().equalsIgnoreCase(uuid) || r.getReceiverUUID().equalsIgnoreCase(uuid)){
+                return r;
+            }
+        }
+        return null;
     }
 
     public static List<Request> getAllRequest(){
@@ -76,6 +96,10 @@ private static List<Request> request = new ArrayList<Request>();
         players.add(receiver);
         if (a.getState() == ArenaState.VACANT){
             a.start(r.getK(), players);
+              if (r.isBid()){
+                  a.setBid(r.getBid());
+                  a.setBidBoolean(true);
+              }
             removeRequest(r);
         }
         else {
@@ -88,7 +112,7 @@ private static List<Request> request = new ArrayList<Request>();
 
     public static void cancelSentRequest(Player player){
         if (hasSentActiveRequest(player)){
-           Request r = getRequest(player.getUniqueId().toString());
+           Request r = getRequestAsSender(player.getUniqueId().toString());
             player.sendMessage(ChatColor.GREEN + "1v1 Request has been canceled");
            removeRequest(r);
 
@@ -103,7 +127,7 @@ private static List<Request> request = new ArrayList<Request>();
             if (!RequestManager.hasSentActiveRequest(sender)){
                 if (ArenaManager.isArena(ArenaName)){
                     Arena a = ArenaManager.getArena(ArenaName);
-
+                    if (!ArenaManager.isInArena(receiver)) {
                     if (KitManager.getKit(kitName) != null){
                         Kit k = KitManager.getKit(kitName);
                         if (!k.getKitType().equalsIgnoreCase("PREMIUM") || (k.getKitType().equalsIgnoreCase("PREMIUM") && sender.hasPermission("Kit." + k.getName()))){
@@ -127,6 +151,11 @@ private static List<Request> request = new ArrayList<Request>();
                     else{
                         sender.sendMessage(ChatColor.RED + "That Kit does not seem to exist.");
                     }
+                   }
+                    else {
+                        sender.sendMessage(ChatColor.RED + "That player is currently in a 1v1 try later.");
+                    }
+
                 }
                 else{
                     sender.sendMessage(ChatColor.RED + "That arena is currently in use or disabled. Do /1v1 arenas to find a vacant arena.");
@@ -144,6 +173,7 @@ private static List<Request> request = new ArrayList<Request>();
         if (sender != null && receiver != null) {
             if (!RequestManager.hasSentActiveRequest(sender)){
                 if (ArenaManager.isArena(ArenaName)){
+                   if (!ArenaManager.isInArena(receiver)) {
                     Arena a = ArenaManager.getArena(ArenaName);
 
                     if (KitManager.getKit(kitName) != null){
@@ -160,10 +190,14 @@ private static List<Request> request = new ArrayList<Request>();
                         sender.sendMessage(ChatColor.RED + "That Kit does not seem to exist.");
                     }
                 }
+                  else {
+                       sender.sendMessage(ChatColor.RED + "That player is currently in a 1v1 try later.");
+                   }
+              }
                 else{
                     sender.sendMessage(ChatColor.RED + "That arena does not seem to exist.");
                 }
-            }
+           }
             else{
                 sender.sendMessage(ChatColor.RED + "You may only have 1 active 1v1 request. Wait until it expires or do /1v1 cancel");
             }

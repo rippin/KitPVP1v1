@@ -8,25 +8,22 @@
     <artifactId>Bully1v1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <repositories>
+        <repository><id>third-party</id>
+            <url>http://168.235.64.202:8069/nexus/content/repositories/thirdparty/</url>
+        </repository>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>http://repo.md-5.net/content/groups/public/</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>LATEST</version>
+            <groupId>org.spigot</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.9.4</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
-            <version>LATEST</version>
-            <scope>provided</scope>
-        </dependency>
-
      <dependency>
         <groupId>me.bullyscaft.com</groupId>
         <artifactId>BullyPVP</artifactId>

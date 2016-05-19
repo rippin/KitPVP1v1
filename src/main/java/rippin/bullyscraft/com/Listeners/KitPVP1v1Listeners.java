@@ -11,10 +11,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.scheduler.BukkitRunnable;
 import rippin.bullyscraft.com.*;
 import rippin.bullyscraft.com.Configs.CachedData;
@@ -31,13 +28,13 @@ public class KitPVP1v1Listeners implements Listener {
     this.plugin = plugin;
 
     }
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onDamage(EntityDamageByEntityEvent event){
         if (event.getEntity() instanceof Player){
             Player p = (Player) event.getEntity();
 
             if (RequestManager.hasActiveRequest(p) || RequestManager.hasSentActiveRequest(p)){
-                Request r = RequestManager.getRequest(p.getUniqueId().toString());
+                Request r = RequestManager.getAnyRequest(p.getUniqueId().toString());
                 Player sender = Bukkit.getPlayer(UUID.fromString(r.getSenderUUID()));
                 Player rec = Bukkit.getPlayer(UUID.fromString(r.getReceiverUUID()));
 
@@ -87,8 +84,19 @@ public class KitPVP1v1Listeners implements Listener {
             BullyPVPStatsHook.setStatsFrom1v1(winner, player, psoWinner, psoLeft);
             PlayerDataHandler.returnItemsAndLocation(player);
         }
+  }
+    @EventHandler(priority = EventPriority.MONITOR)
+    public void onKick(PlayerKickEvent event){
+        Player player = event.getPlayer();
 
+        if (ArenaManager.isInArena(player)){
+            Arena a = ArenaManager.getPlayersArenaUUID(player.getUniqueId().toString());
+            a.removePlayer(player);
+            ArenaManager.broadcastToArena(a, "&4Your opponent was kicked from the server. There is no winner.");
+            PlayerDataHandler.returnItemsAndLocation(player);
+        }
     }
+
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event){

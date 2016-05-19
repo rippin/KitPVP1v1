@@ -1,7 +1,7 @@
 package rippin.bullyscraft.com;
 
 
-import me.bullyscraft.com.BullyScoreBoard;
+import me.bullyscraft.com.Scoreboards.BullyScoreBoard;
 import me.bullyscraft.com.Stats.PlayerStatsObject;
 import org.bukkit.entity.Player;
 
@@ -22,9 +22,9 @@ public static void setStatsFrom1v1(Player winner, Player loser, PlayerStatsObjec
     psoLoser.setLosses1v1(++losses);
 
     BullyScoreBoard b = new BullyScoreBoard(winner, psoWinner);
-    b.setUp();
+    b.updateWithoutPrefixes();
     BullyScoreBoard b1 = new BullyScoreBoard(loser, psoLoser);
-    b1.setUp();
+    b1.update();
 
 }
 

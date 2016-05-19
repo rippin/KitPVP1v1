@@ -25,6 +25,8 @@
         <module name="KitPVP1v1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="KitPVP1v1" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-
