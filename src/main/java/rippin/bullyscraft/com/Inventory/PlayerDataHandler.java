@@ -60,7 +60,7 @@ public class PlayerDataHandler {
         String kitName = config.getString(uuid + ".Kit");
         PlayerInventory oldInv;
         try {
-            oldInv = (PlayerInventory) ItemSerialization.inventoryFromBase64(stringInv);
+            oldInv = (PlayerInventory) ItemSerialization.fromBase64(stringInv);
 
         for (String string : potions) {
             PotionEffect effect = PotionSerialization.fromStringToPotionEffect(string);
